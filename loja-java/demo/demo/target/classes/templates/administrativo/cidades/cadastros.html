@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+xmlns:th="http://thymeLeaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Olá, mundo!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></link>
+  </head>
+  
+  <body>
+  
+     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #020122;padding: 0px">
+        <img src="https://www.freepnglogos.com/uploads/fox-head-art-logo-png-13.png" width="60" height="60" class="d-inline-block align-top" alt="">
+    
+        <a class="navbar-brand" href="/administrativo">Fox Sistems</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/administrativo">Home <span class="sr-only">(página atual)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+          </form>
+        </div>
+      </nav>
+
+
+    <div class="conteiner">
+        <form action="/salvarCidade" th:object="${cidade}" method="POST" style= "padding:100px">
+            <div class="form-group">
+	              <label for="id" >ID:</label>
+	              <input type="text" readonly="true" required class="form-control" id="id" th:field="*{id}" placeholder="Automático">
+	              
+	              <label>Nome Cidade:</label>
+	              <input type="text" required class="form-control" id="nome" th:field="*{nome}" placeholder="Ex: Natal">
+	              
+	              <label>CEP:</label>
+	              <input type="text" required class="form-control" id="cep" th:field="*{cep}" placeholder="Ex: 59072-420">
+	              
+	              <label>Estado:</label>
+	              <select th:field="*{estado}" required class = "form-control">
+	              	<option th:each="est : ${listaEstados}" th:value="${est.id}" th:text="${est.nome}"></option>
+	              </select>
+	              
+            </div>
+
+            <a><button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk" style="color: #ffffff;"></i> Salvar</button></a>
+            <a class="btn btn-danger" href= "/administrativo"><i class="fa-solid fa-circle-left" style="color: #ffffff;"></i> Voltar</a>
+            <a class="btn btn-info" href= "/listarCidade"><i class="fa-regular fa-rectangle-list" style="color: #ffffff;"></i> Listar Cidades</a>
+         
+        </form>
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/0.9.0/jquery.mask.min.js" integrity="sha512-oJCa6FS2+zO3EitUSj+xeiEN9UTr+AjqlBZO58OPadb2RfqwxHpjTU8ckIC8F4nKvom7iru2s8Jwdo+Z8zm0Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <script>
+  $(document).ready(function(){
+	  $('#cep').mask('99.999-999');
+  })
+  </script>
+  
+  </body>
+</html>
