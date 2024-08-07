@@ -68,17 +68,6 @@ Antes de começar, certifique-se de ter os seguintes softwares instalados:
 
 Em andamento...
 
-## Contribuição
-
-Contribuições são bem-vindas! Por favor, siga estas etapas:
-
-1. Faça um fork do repositório.
-2. Crie uma branch para sua modificação (`git checkout -b minha-modificacao`).
-3. Faça suas alterações e commit (`git commit -am 'Adiciona nova funcionalidade'`).
-4. Envie para o repositório remoto (`git push origin minha-modificacao`).
-5. Crie um Pull Request.
-
-
 ## Contato
 
 Se você tiver alguma dúvida, sinta-se à vontade para entrar em contato:
