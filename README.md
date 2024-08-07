@@ -23,7 +23,6 @@ Um sistema de vendas desenvolvido em Java utilizando Spring Boot, Bootstrap e Po
 Antes de começar, certifique-se de ter os seguintes softwares instalados:
 
 - [Java JDK 11 ou superior](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
-- [Maven](https://maven.apache.org/download.cgi)
 - [PostgreSQL](https://www.postgresql.org/download/)
 - [Node.js](https://nodejs.org/) (para gerenciar pacotes front-end)
 
