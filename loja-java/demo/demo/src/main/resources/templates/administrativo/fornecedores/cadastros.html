@@ -42,7 +42,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout">
 
 
     <div class="conteiner">
-        <form action="/salvarFuncionario" th:object="${funcionario}" method="POST" style= "padding:100px">
+        <form action="/salvarFornecedor" th:object="${fornecedor}" method="POST" style= "padding:100px">
             <div class="form-group">
             	<div class="row">
             		<div class="col-md">
@@ -51,19 +51,16 @@ xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout">
             		</div>
             		
             		<div class="col-md">
-            			<label>Nome do Funcionario:</label>
+            			<label>Nome do Fornecedor:</label>
 	              		<input type="text" required class="form-control" id="nome" th:field="*{nome}" placeholder="Ex: Florinda Neves">
             		</div>
             		
             		<div class="col-md">
-            			<label>CPF:</label>
-	              		<input type="text" required class="form-control" id="cpf" th:field="*{cpf}" placeholder="Ex: 000.000.000-00">
+            			<label>CNPJ:</label>
+	              		<input type="text" required class="form-control" id="cnpj" th:field="*{cnpj}" placeholder="Ex: 00.000.000/0000-00">
             		</div>
             		
-            		<div class="col-md">
-            			<label>Telefone:</label>
-	              		<input type="text" required class="form-control" id="telefone" th:field="*{telefone}" placeholder="Ex: (00) 00000-0000">
-            		</div>
+            		
             	</div>
             	
             	<div class="row">
@@ -101,19 +98,18 @@ xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout">
 			              </select>
             		</div>
             		
-            		
-            		
             		<div class="col-md">
-            			<label>Função:</label>
-	              		<input type="text" required class="form-control" id="funcao" th:field="*{funcao}" placeholder="Ex: Empacotador">
+            			<label>Telefone:</label>
+	              		<input type="text" required class="form-control" id="telefone" th:field="*{telefone}" placeholder="Ex: (00) 00000-0000">
             		</div>
+            		
             	</div>
               
             </div>
 
             <a><button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk" style="color: #ffffff;"></i> Salvar</button></a>
             <a class="btn btn-danger" href= "/administrativo"><i class="fa-solid fa-circle-left" style="color: #ffffff;"></i> Voltar</a>
-            <a class="btn btn-info" href= "/listarFuncionario"><i class="fa-regular fa-rectangle-list" style="color: #ffffff;"></i> Listar Funcionarios</a>
+            <a class="btn btn-info" href= "/listarFornecedor"><i class="fa-regular fa-rectangle-list" style="color: #ffffff;"></i> Listar Fornecedores</a>
          
         </form>
     </div>
@@ -127,7 +123,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout">
   
   <script>
   $(document).ready(function(){
-	  $('#cpf').mask('999.999.999-99');
+	  $('#cnpj').mask('99.999.999/9999-99');
 	  $('#telefone').mask('(99) 9 9999-9999');
   })
   </script>

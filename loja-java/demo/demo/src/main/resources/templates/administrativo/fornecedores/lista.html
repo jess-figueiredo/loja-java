@@ -48,33 +48,31 @@ xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout">
 				<tr> 
 					<td>ID</td>
 					<td>Nome</td>
-					<td>CPF</td>
+					<td>CNPJ</td>
 					<td>Telefone</td>
 					<td>Endereço</td>
 					<td>Número</td>
 					<td>Bairro</td>
 					<td>E-mail</td>
-					<td>Função</td>
 					<td>Cidade</td>
 					<td>Ação</td>
 				</tr>
 			</thead>
 		
 		<tbody>
-			<tr th:each = "funcionario: ${listaFuncionarios}">
-				<td th:text = "${funcionario.id}"></td>
-				<td th:text = "${funcionario.nome}"></td>
-				<td th:text = "${funcionario.cpf}"></td>
-				<td th:text = "${funcionario.telefone}"></td>
-				<td th:text = "${funcionario.endereco}"></td>
-				<td th:text = "${funcionario.numero}"></td>
-				<td th:text = "${funcionario.bairro}"></td>
-				<td th:text = "${funcionario.email}"></td>
-				<td th:text = "${funcionario.funcao}"></td>
-				<td th:text = "${funcionario.cidade.nome}"></td>
+			<tr th:each = "fornecedor: ${listaFornecedores}">
+				<td th:text = "${fornecedor.id}"></td>
+				<td th:text = "${fornecedor.nome}"></td>
+				<td th:text = "${fornecedor.cnpj}"></td>
+				<td th:text = "${fornecedor.telefone}"></td>
+				<td th:text = "${fornecedor.endereco}"></td>
+				<td th:text = "${fornecedor.numero}"></td>
+				<td th:text = "${fornecedor.bairro}"></td>
+				<td th:text = "${fornecedor.email}"></td>
+				<td th:text = "${fornecedor.cidade.nome}"></td>
 				<td colspan = "2">
-					<a th:href = "@{/editarFuncionario/{id}(id=${funcionario.id})}"><i class="fa-regular fa-pen-to-square" style="color: #ff5900;"></i></a>
-					<a th:href = "@{/removerFuncionario/{id}(id=${funcionario.id})}"><i class="fa-solid fa-trash" style="color: #ff6600;"></i></a>
+					<a th:href = "@{/editarFornecedor/{id}(id=${fornecedor.id})}"><i class="fa-regular fa-pen-to-square" style="color: #ff5900;"></i></a>
+					<a th:href = "@{/removerFornecedor/{id}(id=${fornecedor.id})}"><i class="fa-solid fa-trash" style="color: #ff6600;"></i></a>
 				</td>
 			</tr>
 		</tbody>
@@ -83,7 +81,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeLeaf/layout">
            
           
             <a class="btn btn-danger" href= "/administrativo"><i class="fa-solid fa-circle-left" style="color: #ffffff;"></i> Voltar</a>
-            <a class="btn btn-primary" href= "/cadastroFuncionario"><i class="fa-solid fa-circle-plus" style="color: #ffffff;"></i> Cadastrar</a>
+            <a class="btn btn-primary" href= "/cadastroFornecedor"><i class="fa-solid fa-circle-plus" style="color: #ffffff;"></i> Cadastrar</a>
          
        
     </div>
